@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cholo — University Bus Tracker</title>
+  <meta name="description" content="View bus schedules and track your university bus in real-time with Cholo." />
+  <style>
+    :root{
+      --blue: #007BFF;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --radius: 12px;
+      --max-w: 980px;
+      --gap: 20px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{
+      max-width:var(--max-w);
+      margin:40px auto;
+      padding:28px;
+    }
+
+    /* header */
+    .header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .logo{
+      width:72px;
+      height:72px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--blue) 0%, #2bb3ff 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(2,6,23,0.06);
+      overflow:hidden;
+    }
+    .logo img{width:56px;height:56px;object-fit:contain;display:block}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    /* hero */
+    .hero{
+      display:flex;
+      gap:28px;
+      margin-top:26px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .hero-left{flex:1;min-width:260px}
+    .cta{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background:var(--blue);
+      color:white;
+      border:none;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      box-shadow:0 6px 18px rgba(2,6,23,0.08);
+    }
+    .btn.ghost{
+      background:transparent;
+      color:var(--blue);
+      border:1px solid rgba(0,112,255,0.12);
+      box-shadow:none;
+    }
+    .small{font-size:13px;color:var(--muted)}
+
+    /* features */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+    .card{
+      background:var(--card);
+      padding:16px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(15,23,42,0.03);
+    }
+    .icon{
+      width:44px;height:44px;border-radius:10px;background:rgba(0,112,255,0.08);display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;
+    }
+
+    /* screenshots */
+    .screens{
+      margin-top:28px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .ss{
+      width:220px;
+      height:430px;
+      border-radius:12px;
+      overflow:hidden;
+      background:linear-gradient(180deg,#fff,#f5f7fb);
+      border:1px solid #e6eef9;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .ss img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* footer */
+    footer{
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid #eef2f7;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .socials a{color:var(--muted);margin-left:12px;text-decoration:none}
+    .socials a svg{vertical-align:middle}
+
+    /* responsive */
+    @media (max-width:860px){
+      .features{grid-template-columns:repeat(2,1fr)}
+      .ss{width:160px;height:340px}
+    }
+    @media (max-width:560px){
+      .features{grid-template-columns:1fr}
+      .hero{gap:14px}
+      .logo{width:60px;height:60px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="logo" aria-hidden>
+        <!-- Put your text-free logo at assets/logo.png -->
+        <img src="assets/logo.png" alt="Cholo logo (replace with your logo)" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <h1>Cholo</h1>
+        <p class="lead">View bus schedules and track your university bus in real-time</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <p style="margin:0;color:var(--muted)">Simple, fast, and focused on helping students, employees, and drivers stay in sync.</p>
+
+        <div class="cta">
+          <!-- Replace # with your APK link when ready -->
+          <a id="downloadBtn" class="btn" href="#" title="Download APK">
+            ⬇️ Download APK
+          </a>
+
+          <a class="btn ghost" href="#features" title="Learn more">Learn more</a>
+        </div>
+
+        <div style="margin-top:18px;font-size:13px;color:var(--muted)">
+          <strong>Quick:</strong> View schedules, assigned buses, stops, and real-time location on an interactive map.
+        </div>
+
+        <div class="features" id="features" style="margin-top:20px">
+          <div class="card">
+            <div class="icon">🗓</div>
+            <strong>Bus Schedules</strong>
+            <div class="small" style="margin-top:8px">View all route schedules at a glance.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🚍</div>
+            <strong>Assigned Buses</strong>
+            <div class="small" style="margin-top:8px">See which bus is assigned; get notified if replaced.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">📍</div>
+            <strong>Stopages & Map</strong>
+            <div class="small" style="margin-top:8px">See stops and live bus position with ETA and distance.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">📡</div>
+            <strong>Real-Time Tracking</strong>
+            <div class="small" style="margin-top:8px">Interactive map with live location updates.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">👥</div>
+            <strong>Location Sharing</strong>
+            <div class="small" style="margin-top:8px">Students, employees & drivers can share bus location.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔒</div>
+            <strong>Privacy-Focused</strong>
+            <div class="small" style="margin-top:8px">Minimal data collected and never sold.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right column: screenshots/banner -->
+      <div style="min-width:240px; display:flex;flex-direction:column;gap:12px;align-items:center">
+        <div class="ss">
+          <!-- Put real screenshot at assets/screenshots/s1.png -->
+          <img src="assets/screenshots/s1.png" alt="Screenshot 1" onerror="this.style.display='none'">
+          <span style="display:block;text-align:center">Screenshot 1</span>
+        </div>
+        <div class="ss" style="width:180px;height:240px">
+          <img src="assets/screenshots/s2.png" alt="Screenshot 2" onerror="this.style.display='none'">
+          <span style="display:block;text-align:center">Screenshot 2</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:28px">
+      <h2 style="font-size:16px;margin:0 0 12px 0">How it works</h2>
+      <p class="small" style="margin:0">
+        1. Select your route → 2. See assigned bus and stopages → 3. Track live location and ETA on map → 4. Receive updates if bus changes
+      </p>
+    </section>
+
+    <footer>
+      <div>
+        © 2025 Cholo • Built by Mohammad Musa<br />
+        <a href="privacy-policy.html" style="color:var(--muted);text-decoration:none">Privacy Policy</a>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/md-musa" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohammad-musa1" target="_blank" rel="noopener" style="margin-left:12px">LinkedIn</a>
+        <a href="mailto:mohammad.musa706@gmail.com" style="margin-left:12px">Email</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Replace this placeholder with your APK link later.
+    // When you have the APK URL, either:
+    // 1) update the href in the button directly, OR
+    // 2) use this script to set it dynamically:
+    const apkUrl = '#'; // <-- replace '#' with your APK URL
+    const btn = document.getElementById('downloadBtn');
+    if (apkUrl && apkUrl !== '#') {
+      btn.href = apkUrl;
+      btn.setAttribute('target','_blank');
+    } else {
+      // if no link yet, disable button and show tooltip
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('APK link not added yet. Replace the apkUrl in the HTML with your download link.');
+      });
+    }
+  </script>
+</body>
+</html>
