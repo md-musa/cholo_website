@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cholo - University Bus Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body class="bg-gradient-to-b from-blue-500 to-white min-h-screen flex flex-col text-gray-800">
+
+  <body class="bg-gradient-to-b from-indigo-500 to-white min-h-screen flex flex-col text-gray-800">
     <!-- Hero Section -->
     <section class="flex flex-col items-center text-center py-20 px-4">
-      <div class="flex items-center space-x-4 mb-6">
-        <img src="play_store_512.png" alt="Cholo Logo" class="w-16 h-16 rounded-xl shadow-lg" />
+      <div class="flex items-center space-x-4 mb-6 p-2">
+        <img src="./assets/images/logo.png" alt="Cholo Logo" class="w-16 h-16" />
         <h1 class="text-4xl font-bold text-white drop-shadow-lg">Cholo</h1>
       </div>
+
       <p class="text-lg text-white/90 max-w-xl mb-8">
         View bus schedules, assigned buses, real-time locations, and upcoming stops — all in one place.
       </p>
@@ -20,14 +23,11 @@
       <div class="flex flex-wrap justify-center gap-4">
         <!-- Android Button -->
         <a
-          href="#"
+          href="https://github.com/md-musa/cholo_website/releases/download/v1.0.0/Cholo.aab"
           class="flex items-center space-x-2 bg-green-500 text-white px-5 py-3 rounded-xl font-semibold shadow-md transform transition hover:scale-105 hover:shadow-lg"
+          download
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M17.523 7.615L6.72 2.229A1.5 1.5 0 0 0 4.5 3.553v16.894a1.5 1.5 0 0 0 2.22 1.324l10.803-5.386a1.5 1.5 0 0 0 0-2.676z"
-            />
-          </svg>
+          <i data-lucide="smartphone" class="w-5 h-5"></i>
           <span>Download for Android</span>
         </a>
 
@@ -36,11 +36,7 @@
           disabled
           class="flex items-center space-x-2 bg-gray-300 text-gray-700 px-5 py-3 rounded-xl font-semibold shadow-sm cursor-not-allowed"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M16.365 1.43c.442-.524.98-.97 1.615-1.33a4.5 4.5 0 0 1-1.95 2.28c.66-.05 1.3-.19 1.93-.43a4.6 4.6 0 0 1-1.595 2.11A4.5 4.5 0 0 1 12.61 6a4.6 4.6 0 0 1-3.43-1.525 4.5 4.5 0 0 1-.985-3.33 4.5 4.5 0 0 1 1.345-3.245 4.6 4.6 0 0 1 3.33-1.4 4.5 4.5 0 0 1 3.495 1.93z"
-            />
-          </svg>
+          <i data-lucide="apple" class="w-5 h-5"></i>
           <span>iOS Coming Soon</span>
         </button>
       </div>
@@ -50,41 +46,60 @@
 
     <!-- Features Section -->
     <section class="bg-white py-16 px-6">
-      <h2 class="text-3xl font-bold text-center mb-10 text-blue-600">Key Features</h2>
+      <h2 class="text-3xl font-bold text-center mb-10 text-indigo-600">Key Features</h2>
+
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-          <svg class="w-10 h-10 text-blue-500 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 8h18M3 16h18M3 12h18" />
-          </svg>
-          <h3 class="font-semibold text-lg mb-2">Bus Schedules</h3>
-          <p>View all bus schedules and their assigned buses quickly and easily.</p>
+        <!-- Bus Schedule -->
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:scale-105"
+        >
+          <i data-lucide="calendar-days" class="w-10 h-10 text-indigo-500 mb-4"></i>
+          <h3 class="font-semibold text-lg mb-2">Bus Schedule</h3>
+          <p>View daily university bus schedules instantly and stay updated with all upcoming trips in one place.</p>
         </div>
-        <div class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-          <svg class="w-10 h-10 text-blue-500 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 8c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6s6-2.69 6-6c0-3.31-2.69-6-6-6z" />
-            <path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4" />
-          </svg>
-          <h3 class="font-semibold text-lg mb-2">Real-time Tracking</h3>
-          <p>See live bus locations, route stops, and arrival times on an interactive map.</p>
+
+        <!-- Assigned Buses -->
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:scale-105"
+        >
+          <i data-lucide="bus" class="w-10 h-10 text-indigo-500 mb-4"></i>
+          <h3 class="font-semibold text-lg mb-2">Assigned Buses</h3>
+          <p>
+            Check which buses are assigned to your route or schedule. Receive notifications when new buses are added.
+          </p>
         </div>
-        <div class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-          <svg class="w-10 h-10 text-blue-500 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M17 16l4-4-4-4M7 8l-4 4 4 4" />
-          </svg>
-          <h3 class="font-semibold text-lg mb-2">Location Sharing</h3>
-          <p>Students, employees, and drivers can share live bus locations securely.</p>
+
+        <!-- Real-time Tracking & Sharing -->
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:scale-105"
+        >
+          <i data-lucide="map-pin" class="w-10 h-10 text-indigo-500 mb-4"></i>
+          <h3 class="font-semibold text-lg mb-2">Real-time Tracking & Sharing</h3>
+          <p>
+            Track buses live on an interactive map with stop details and estimated arrival time. Students, employees,
+            and drivers can share live locations securely.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white text-center py-6 mt-auto">
+    <footer class="bg-indigo-500 text-white text-center py-6 mt-auto">
       <p class="mb-2">© 2025 Cholo. All rights reserved.</p>
       <div class="flex justify-center gap-4 text-sm">
-        <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
-        <a href="#" class="hover:underline">Contact</a>
-        <a href="#" class="hover:underline">GitHub</a>
+        <a href="https://md-musa.github.io/cholo_privacy-policy/" class="hover:underline">Privacy Policy</a>
+        <a
+          href="mailto:mohammad.musa.dev@gmail.com"
+          class="hover:underline"
+          title="Typical response within 24 hours (Mon-Fri)"
+          >Contact</a
+        >
+        <a href="https://github.com/md-musa" class="hover:underline">GitHub</a>
       </div>
     </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
